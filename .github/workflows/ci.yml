@@ -19,5 +19,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install flask pytest
 
+      - name: Configurar PYTHONPATH
+        run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
+
       - name: Executar testes
-        run: pytest
+        run: pytest tests
