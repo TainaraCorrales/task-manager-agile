@@ -9,6 +9,7 @@ def criar_tarefa():
     data = request.get_json()
     tarefa = {
         "id": len(tarefas) + 1,
+    
         "titulo": data.get("titulo"),
         "concluida": False
     }
