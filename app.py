@@ -10,9 +10,12 @@ def create_task():
     global task_id
     data = request.json
     task = {
-        'id': task_id,
-        'title': data['title'],
-        'completed': False
+    'id': task_id,
+    'title': data['title'],
+    'priority': data.get('priority', 'Média'),
+    'completed': False
+}
+
     }
     tasks.append(task)
     task_id += 1
