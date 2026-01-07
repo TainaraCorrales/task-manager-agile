@@ -7,7 +7,13 @@ from app import app
 
 def test_create_task():
     client = app.test_client()
-    response = client.post('/tasks', json={'title': 'Nova tarefa'})
+    response = client.post(
+        '/tasks',
+        json={
+            'title': 'Nova tarefa',
+            'priority': 'Alta'
+        }
+    )
     assert response.status_code == 201
 
 def test_get_tasks():
